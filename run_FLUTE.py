@@ -68,10 +68,6 @@ def getRelatedPapers(db_user,db_pass,db_host,db_name,prot):
                 refLogs.append(indRef)
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
     idConv = np.load("pmcidYears.npy")
     final_papers = []
 
@@ -142,7 +138,6 @@ def getRelatedInts(db_user,db_pass,db_host,db_name,f):
 
         cursorGetProtInfo.execute(infoQuery,{'internal_id':directedInt[0]})
 
-<<<<<<< HEAD
 
         cursorGetProtInfo.execute(infoQuery,{'internal_id':directedInt[1]})
 
@@ -152,47 +147,13 @@ def getRelatedInts(db_user,db_pass,db_host,db_name,f):
     paperNum = list(set(log[:,3]))
 
     
-=======
-        print(cursorGetProtInfo.fetchone())
-
-        cursorGetProtInfo.execute(infoQuery,{'internal_id':directedInt[1]})
-
-        print(cursorGetProtInfo.fetchall())
-
-
-
-    ll = np.array(log)
-
-    print(log)
-
-    paperNum = list(set(log[:,3]))
-
-    
-
-    print(paperNum)
-
-
-    
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
 def getRecentPapers(f):
 
     #this function should search the OA file and find all interactions occuring in papers less than X years old
 
-<<<<<<< HEAD
     d = pd.read_excel(f)
     data = d.values
     ppr = data[:,11]
-=======
-
-    tmp1 = float(time.time())
-
-    d = pd.read_excel(f)
-
-    data = d.values
-
-    ppr = data[:,11]
-
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
     yrs = np.load("pmcidYears.npy")
 
     s = []
@@ -200,13 +161,7 @@ def getRecentPapers(f):
     with open("years.txt", 'w+') as outf:
 
         for p in ppr:
-<<<<<<< HEAD
             for y in yrs:
-=======
-
-            for y in yrs:
-
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
                 if(y[1]==p):
 
                     outf.write(y[0])
@@ -214,16 +169,8 @@ def getRecentPapers(f):
 
             outf.write("\n")
 
-<<<<<<< HEAD
     outf.close()
 
-=======
-
-    outf.close()
-
-    tmp2 =float(time.time()) - tmp1
-
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
 
 def getDups(f):
 
@@ -243,11 +190,6 @@ def getDups(f):
 
             if(vals[i,0]==vals[j,0] and vals[i,1]==vals[j,1] and vals[i,2]!=vals[j,2]):
 
-<<<<<<< HEAD
-=======
-                print("Duplicated interaction")
-
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
                 vals[i,3] = int(vals[i,3]) + 1
 
     with open("duplicateNum.txt", "w+") as outf:
@@ -276,13 +218,10 @@ def get_args():
         parser.add_argument('file_in', type=str,help="Input file")
         parser.add_argument('filtered_reading', type=str,help="Filtered reading output filename")
         parser.add_argument('scores', type=str,help="Database scores output filename")
-<<<<<<< HEAD
         parser.add_argument('-g','--get_duplicates',action="store_true",default=False,help="Whether to output duplicate interactions")
         parser.add_argument('-p','--recentPapers',action="store_true",default=False,help="If true, exempts recent papers from filtering")
         parser.add_argument('-q','--protQuery',help="If true, finds interactions for protein ID") 
         parser.add_argument('-r','--relatedInts',action="store_true",default=False,help="If true, adds additional interactions related to input.")      
-=======
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
         
         args = parser.parse_args()
 
@@ -417,19 +356,11 @@ def uni_only(allInts):
 
     for i in range(0,allInts.shape[0]):
         nm1 = allInts[i,0]
-<<<<<<< HEAD
         nm2 = allInts[i,3]
         type1 = allInts[i,2].lower()
         type2 = allInts[i,5].lower()
         up_id1 = str(allInts[i,1])
         up_id2 = str(allInts[i,4])
-=======
-        nm2 = allInts[i,4]
-        type1 = allInts[i,1].lower()
-        type2 = allInts[i,5].lower()
-        up_id1 = str(allInts[i,3])
-        up_id2 = str(allInts[i,7])
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
 
         if(type1=='protein' or type2=='protein'):
 
@@ -495,20 +426,15 @@ def main():
     db_name = args.DB
     db_host = args.host
     f_in = args.file_in
-<<<<<<< HEAD
     recentPapers = args.recentPapers
     get_duplicates = args.get_duplicates
     protQuery = args.protQuery
     relatedInts = args.protQuery
-=======
-
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
 
     escores=[0]
     tscores=[0]
     dscores= [0]
 
-<<<<<<< HEAD
     if(recentPapers):
         getRecentPapers(f_in)
 
@@ -522,17 +448,6 @@ def main():
     if(relatedInts):
 
         getRelatedInts(db_user,db_pass,db_host,db_name,f_in)
-=======
-    getRecentPapers(f_in)
-
-    getDups(f_in)
-
-    protQuery = "P35606" 
-
-    getRelatedPapers(db_user,db_pass,db_host,db_name,protQuery)
-
-    getRelatedInts(db_user,db_pass,db_host,db_name,f_in)
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
 
     for es in escores:
 
@@ -541,7 +456,6 @@ def main():
             for ds in dscores:
 
                 start = time.time()
-<<<<<<< HEAD
                 df= pd.read_excel(f_in)
 
 
@@ -551,18 +465,6 @@ def main():
                 allInts= a.values
                 
                 getID = np.append(allInts[:,1],allInts[:,4]).astype(">U50")
-=======
-
-                #fix this!!
-                a= pd.read_excel(f_in)
-
-                allInts= a.values
-
-                getID = np.append(allInts[:,3],allInts[:,7]).astype(">U50")
-
-                #print(getID)
-
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
                 uniqID = np.unique(getID)
 
                 blankDict = np.zeros((uniqID.shape[0],3),dtype=">U50")
@@ -570,7 +472,6 @@ def main():
 
                 for i in range(blankDict.shape[0]):
                     for j in range(allInts.shape[0]):
-<<<<<<< HEAD
                         if(allInts[j,1]==blankDict[i,0]):
                            blankDict[i,1] =allInts[j,0]
 
@@ -582,31 +483,12 @@ def main():
                 all_ids = uni_only(allInts) #returns lower-case interactions:ppis/pcis/pbpis
                 npIDs = np.array(all_ids).reshape(-1,4).astype(">U750")
 
-=======
-                        if(allInts[j,3]==blankDict[i,0]):
-                           blankDict[i,1] =allInts[j,0]
-
-                        elif(allInts[j,6]==blankDict[i,0]):
-                            blankDict[i,1] = allInts[j,4]
-
-                nameDict = convID(db_user,db_pass,db_host,db_name,blankDict)
-                all_ids = uni_only(allInts) #returns lower-case interactions:pis/pcis/pgis
-
-                npIDs = np.array(all_ids).reshape(-1,4).astype(">U750")
-
-                #print(npIDs)
-
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
                 intComp = np.empty((npIDs.shape[0],17),dtype=">U750")
                 intComp[:,0] = npIDs[:,0] #element1 name
                 intComp[:,1] = np.char.upper(npIDs[:,1]) # element 1 id
                 intComp[:,8] = npIDs[:,2]        
                 intComp[:,9] = np.char.upper(npIDs[:,3])
 
-<<<<<<< HEAD
-=======
-
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
                 intComp_c = getChem(intComp) #get cidm ids
                 intComp = getGo(intComp_c)
 
@@ -616,21 +498,13 @@ def main():
 
                     for j in range(nameDict.shape[0]):
 
-<<<<<<< HEAD
                         if(id1==nameDict[j,0].upper()):
-=======
-                        if(id1==nameDict[j,0]):
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
                             intComp[i,3] = str(nameDict[j,2])
 
                             if(nameDict[j,2]):
                                 intComp[i,2] = str(nameDict[j,0])
 
-<<<<<<< HEAD
                         if(id2==nameDict[j,0].upper()):
-=======
-                        if(id2==nameDict[j,0]):
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
                             intComp[i,11] = str(nameDict[j,2])
 
                             if(nameDict[j,2]):
@@ -640,11 +514,6 @@ def main():
                 outp2 = args.filtered_reading
 
                 fInts = findInts(db_user,db_pass,db_host,db_name,intComp,es,ts,ds) 
-<<<<<<< HEAD
-=======
-
-                #print(fInts)
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
                 np.savetxt(outp2,fInts, delimiter=",",fmt='%s %s %s %s %s',encoding="utf-8")
 
                 xl = f_in
@@ -653,7 +522,6 @@ def main():
                 IC = IC_df.values
 
                 fUniq = np.unique(fInts, axis=0)
-<<<<<<< HEAD
                 fInts = fUniq
 
                 rowDf = IC_df[['RegulatedID','RegulatorID']]
@@ -678,58 +546,6 @@ def main():
                                     outfile.write("\t")
 
                                 outfile.write("\n")
-=======
-
-                fInts = fUniq
-
-                rc = fInts.shape[0]
-                rc2 = IC.shape[0]
-
-                with open(outp, 'w+', encoding="utf-8") as outfile:
-
-                    for n in range(rc2): #go through all original ints and find evidence
-
-                        found = False
-                        ind = -1
-
-                        for k in range(rc): 
-
-                            ic1 = str(IC[n,3])
-                            ic2 = str(IC[n,7])
-
-                            #Write to file:check both directions
-
-                            if((fInts[k,0]==ic1 and fInts[k,1]==ic2) or (fInts[k,0]==ic2 and fInts[k,1]==ic1)):
-
-                                found = True
-                                ind=k
-
-                        if(found==False):
-
-                            for m in range(IC.shape[1]):
-
-                                outfile.write(str(IC[n,m]))
-                                outfile.write("\t")
-
-                            outfile.write("\n")
-
-                        else:
-
-
-                            for m in range(IC.shape[1]):
-
-                                outfile.write(str(IC[n,m]))
-                                outfile.write("\t")
-
-                            outfile.write(fInts[ind,2])
-                            outfile.write("\t")
-                            outfile.write(str(fInts[ind,3])) 
-                            outfile.write("\t")
-                            outfile.write(str(fInts[ind,4]))
-
-                            outfile.write("\n") 
-
->>>>>>> bbf80e6015219c595960550fd1f025492cf265a3
 
 
                 outfile.close()
