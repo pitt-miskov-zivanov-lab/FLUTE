@@ -1,0 +1,28 @@
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+\let\spxpagem \sphinxstyleindexpagemain
+\let\spxentry \sphinxstyleindexentry
+\let\spxextra \sphinxstyleindexextra
+
+  \bigletter C
+  \item \spxentry{convID()}\spxextra{in module run\_FLUTE}, \hyperpage{7}
+
+  \indexspace
+  \bigletter F
+  \item \spxentry{findInts()}\spxextra{in module run\_FLUTE}, \hyperpage{8}
+
+  \indexspace
+  \bigletter G
+  \item \spxentry{getArgs()}\spxextra{in module run\_FLUTE}, \hyperpage{7}
+  \item \spxentry{getChem()}\spxextra{in module run\_FLUTE}, \hyperpage{8}
+  \item \spxentry{getDups()}\spxextra{in module run\_FLUTE}, \hyperpage{7}
+  \item \spxentry{getGo()}\spxextra{in module run\_FLUTE}, \hyperpage{8}
+  \item \spxentry{getRecentPapers()}\spxextra{in module run\_FLUTE}, \hyperpage{7}
+  \item \spxentry{getRelatedInts()}\spxextra{in module run\_FLUTE}, \hyperpage{7}
+  \item \spxentry{getRelatedPapers()}\spxextra{in module run\_FLUTE}, \hyperpage{7}
+
+  \indexspace
+  \bigletter U
+  \item \spxentry{uniOnly()}\spxextra{in module run\_FLUTE}, \hyperpage{8}
+
+\end{sphinxtheindex}
