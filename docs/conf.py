@@ -13,8 +13,12 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
-
+import mock
 import run_FLUTE
+
+MOCK_MODULES = ['mysql']
+for mod_name in MOCK_MODULES:
+sys.modules[mod_name] = mock.Mock()
 
 # conf.py options for Latex
 latex_engine = 'pdflatex'
@@ -60,3 +64,4 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+ 
