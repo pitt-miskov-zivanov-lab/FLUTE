@@ -13,12 +13,10 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
-import mock
+
 import run_FLUTE
 
-MOCK_MODULES = ['mysql']
-for mod_name in MOCK_MODULES:
-    sys.modules[mod_name] = mock.Mock()
+autodoc_mock_imports = ['mysql',"mysqlclient","mysql.connector"]
 
 # conf.py options for Latex
 latex_engine = 'pdflatex'
