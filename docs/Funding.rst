@@ -1,5 +1,4 @@
 Licensing and funding
 =====================
 
-
-Supported by DARPA award..
+This work was supported by the Defense Advanced Research Projects Agency [W911NF-17-1-0135].
