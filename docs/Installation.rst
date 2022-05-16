@@ -30,4 +30,4 @@ FLUTE database
 5. If you created a username and password, this will be your username in the above command, but do not enter your password above! Once you hit enter, it will prompt you for the password.
 6. You can now run the “run_FLUTE.py” script, you will need to enter the database, host, username, etc. as an argument from the command line.
 
-
+Copyright (c) 2022 Emilee Holtzapple, Miskov-Zivanov Lab (MeLoDy lab)
