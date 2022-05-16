@@ -9,3 +9,5 @@ Citation
 
 To cite and use the FLUTE tool, please use the following:
 Emilee Holtzapple, Cheryl A Telmer, Natasa Miskov-Zivanov, FLUTE: Fast and reliable knowledge retrieval from biomedical literature, Database, Volume 2020, 2020, https://doi.org/10.1093/database/baaa056
+
+Copyright (c) 2022 Emilee Holtzapple, Miskov-Zivanov Lab (MeLoDy lab)
