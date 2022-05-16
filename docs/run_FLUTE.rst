@@ -51,5 +51,7 @@ Dependencies
 `MySQL Connector for Python3 <https://dev.mysql.com/doc/connector-python/en/>`_ library
 
 `argparse <https://docs.python.org/3/library/argparse.html>`_ library
+
 `re <https://docs.python.org/3/library/re.html>`_ library
-	
+
+Copyright (c) 2022 Emilee Holtzapple, Miskov-Zivanov Lab (MeLoDy lab)
