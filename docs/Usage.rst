@@ -17,3 +17,5 @@ FLUTE usage
 	============= =========== ============= ============= =========== ============= =======
 	
 4.	Output files include list of reading interactions that pass filtration, and the filtration scores for those filtered interactions.
+
+Copyright (c) 2022 Emilee Holtzapple, Miskov-Zivanov Lab (MeLoDy lab)
