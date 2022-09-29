@@ -710,6 +710,11 @@ def main():
                 rowIDs  = rowDf.values
 
                 with open(outp, 'w+', encoding="utf-8") as outfile:
+                    for dc in IC_df.columns:
+                       outfile.write(dc)
+                       outfile.write("\t")
+
+                    outfile.write("\n")
 
                     for n in range(fInts.shape[0]): #go through all original ints and find evidence
 
