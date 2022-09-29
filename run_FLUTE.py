@@ -695,8 +695,11 @@ def main():
                 outp = args.scores
                 outp2 = args.filtered_reading
 
-                fInts = findInts(db_user,db_pass,db_host,db_name,intComp,es,ts,ds) 
-                np.savetxt(outp2,fInts, delimiter=",",fmt='%s %s %s %s %s',encoding="utf-8")
+                fInts = findInts(db_user,db_pass,db_host,db_name,intComp,es,ts,ds)
+                fHeaders = ["Element 1 ID", "Element 2 ID", "STRING escore","STRING tscore","STRING dscore"]
+
+                fIntsHead = np.vstack([fHeaders,fInts])                
+                np.savetxt(outp2,fIntsHead, delimiter=",",fmt='%s %s %s %s %s',encoding="utf-8")
 
                 xl = f_in
 
