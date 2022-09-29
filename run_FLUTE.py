@@ -699,7 +699,7 @@ def main():
                 fHeaders = ["Element 1 ID", "Element 2 ID", "STRING escore","STRING tscore","STRING dscore"]
 
                 fIntsHead = np.vstack([fHeaders,fInts])                
-                np.savetxt(outp2,fIntsHead, delimiter=",",fmt='%s %s %s %s %s',encoding="utf-8")
+                np.savetxt(outp2,fIntsHead, delimiter=",",fmt='%s\t%s\t%s\t%s\t%s',encoding="utf-8")
 
                 xl = f_in
 
