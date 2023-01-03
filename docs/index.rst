@@ -35,4 +35,4 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-Copyright (c) 2022 Emilee Holtzapple, Miskov-Zivanov Lab (MeLoDy lab)
+Copyright (c) 2023 Emilee Holtzapple, Miskov-Zivanov Lab (MeLoDy lab)
