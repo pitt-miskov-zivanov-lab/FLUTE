@@ -40,7 +40,7 @@ Functions
 Dependencies
 ------------
 
-**Python**: 
+**Python**:
 
 `pandas <https://pandas.pydata.org>`_ library
 
@@ -53,5 +53,3 @@ Dependencies
 `argparse <https://docs.python.org/3/library/argparse.html>`_ library
 
 `re <https://docs.python.org/3/library/re.html>`_ library
-
-Copyright (c) 2022 Emilee Holtzapple, Miskov-Zivanov Lab (MeLoDy lab)

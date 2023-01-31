@@ -1,8 +1,9 @@
-Getting started with FLUTE <br>
+# VIOLIN
+[![Documentation Status](https://readthedocs.org/projects/flute/badge/?version=latest)](https://flute.readthedocs.io/en/latest/?badge=latest)
 
 Purpose: Understanding disease at the cellular level requires detailed knowledge of signaling networks. To aid in this task, many advances have been made in the field of natural language processing (NLP) to extract signaling events from biomedical literature. However, even state-of-the-art NLP methods incorrectly interpret some signaling events described in the literature. The FiLter for Understanding True Events (FLUTE) tool seeks to identify high-confidence signaling events from biomedical NLP output by comparing with existing biological databases. As such, FLUTE can reliably determine the confidence in the biomolecular events extracted by NLP methods and at the same time provide a speedup in event filtering by three orders of magnitude. <br>
 
-<br>  
+<br>
 FLUTE DB installation instructions:<br>
     -Un-zip the FLUTE.sql file downloaded from BitBucket.<br>
     -Log in to the MySQL environment using your username and password. <br>
