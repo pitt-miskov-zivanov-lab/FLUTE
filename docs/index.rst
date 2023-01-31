@@ -5,11 +5,15 @@
 
 Welcome to FLUTE's documentation!
 =================================
+.. image:: https://readthedocs.org/projects/flute/badge/?version=latest
+    :target: https://flute.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
 Understanding disease at the cellular level requires detailed knowledge of signaling networks. To aid in this task, many advances have been made in the field of natural language processing (NLP) to extract signaling events from biomedical literature.
 
 However, even state-of-the-art NLP methods incorrectly interpret some signaling events described in the literature.
 
-.. image:: figure_1.png
+.. image:: workflow.png
   :width: 700
   :alt: The workflow of the FLUTE database.
 
