@@ -47,7 +47,11 @@ extensions = ['sphinx.ext.autodoc',
             'sphinx.ext.viewcode',
             'sphinx.ext.intersphinx',
             'sphinx_copybutton',
-            'sphinx.ext.autosectionlabel']
+            'sphinx.ext.autosectionlabel',
+            'sphinx_rtd_theme',
+            'sphinx.ext.napoleon',
+            'rst2pdf.pdfbuilder',
+            'sphinx.ext.extlinks']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -56,6 +60,9 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+
+# The name of the Pygments (syntax highlighting) style to use.
+pygments_style = 'sphinx'
 
 
 # -- Options for HTML output -------------------------------------------------

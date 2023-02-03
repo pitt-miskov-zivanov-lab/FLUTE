@@ -1,8 +1,9 @@
 FLUTE usage
 ===========
 
-1. To filter interactions, run "run_FLUTE.py". You must have Python3 installed.
-2. The script takes several parameters:
+1. 	To filter interactions, run "run_FLUTE.py". You must have Python3 installed.
+2. 	The script takes several parameters:
+
 	A. MySQL username
 	B. MySQL password
 	C. Host name - “localhost” for MacOSX, desktop name for Windows

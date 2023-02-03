@@ -6,7 +6,6 @@ The functions in this module ground element names and check against the FLUTE da
 
 Functions
 ---------
-
 .. currentmodule:: run_FLUTE
 .. autofunction:: getRelatedPapers
 
@@ -18,9 +17,6 @@ Functions
 
 .. currentmodule:: run_FLUTE
 .. autofunction:: getDups
-
-.. currentmodule:: run_FLUTE
-.. autofunction:: getArgs
 
 .. currentmodule:: run_FLUTE
 .. autofunction:: convID
@@ -40,16 +36,9 @@ Functions
 Dependencies
 ------------
 
-**Python**:
-
-`pandas <https://pandas.pydata.org>`_ library
-
-`csv <https://github.com/python/cpython/blob/3.9/Lib/csv.py>`_ module
-
-`numpy <https://numpy.org>`_ library
-
-`MySQL Connector for Python3 <https://dev.mysql.com/doc/connector-python/en/>`_ library
-
-`argparse <https://docs.python.org/3/library/argparse.html>`_ library
-
-`re <https://docs.python.org/3/library/re.html>`_ library
+- `pandas <https://pandas.pydata.org>`_ library
+- `csv <https://github.com/python/cpython/blob/3.9/Lib/csv.py>`_ module
+- `numpy <https://numpy.org>`_ library
+- `MySQL Connector for Python3 <https://dev.mysql.com/doc/connector-python/en/>`_ library
+- `argparse <https://docs.python.org/3/library/argparse.html>`_ library
+- `re <https://docs.python.org/3/library/re.html>`_ library

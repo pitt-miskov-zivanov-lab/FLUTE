@@ -23,6 +23,6 @@ This work was funded in part by DARPA Big Mechanism award, AIMCancer (W911NF-17-
 Citation
 ###################
 
-To use and cite the CLARINET tool, please use the following:
+To use and cite the FLUTE tool, please use the following:
 
 Emilee Holtzapple, Cheryl A Telmer, Natasa Miskov-Zivanov, FLUTE: Fast and reliable knowledge retrieval from biomedical literature, Database, Volume 2020, 2020, https://doi.org/10.1093/database/baaa056

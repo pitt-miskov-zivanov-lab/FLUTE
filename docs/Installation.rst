@@ -9,18 +9,19 @@ MySQL
 
 	mysql -u root
 
-If the first prompt fails, you may need to enter the password associated with your computer user account::
+.. Attention::
+ If the first prompt fails, you may need to enter the password associated with your computer user account::
 
 	mysql -u root -p
 
-3. You may choose to create a local username and password to keep your database private.
-4. Install `MySQL Python connector <https://dev.mysql.com/doc/connector-python/en/>`_.
+4. You may choose to create a local username and password to keep your database private.
+5. Install `MySQL Python connector <https://dev.mysql.com/doc/connector-python/en/>`_.
 
 
 FLUTE database
 --------------
 
-1. Un-zip the FLUTE.sql file downloaded from BitBucket.
+1. Un-zip the FLUTE.sql file downloaded from Github.
 2. Log in to the MySQL environment using your username and password.
 3. From there, create an empty database.
 4. Log back out, and again from the command line::

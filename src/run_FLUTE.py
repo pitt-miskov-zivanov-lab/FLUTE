@@ -16,30 +16,27 @@ Compares list of interactions against local copy of FLUTE database
 Last updated: March 2021
 '''
 
+
 def getRelatedPapers(db_user,db_pass,db_host,db_name,prot):
 
-    '''
-    This function retrieves related papers based on a protein name.
+    """
+
+    This function retrieves related papers based on a protein name and saves a file of related paper IDs.
 
     Parameters
     ----------
-    db_user: str
+    db_user : str
         Name of the MySQL user where the FLUTE DB is stored.
-    db_pass: str
+    db_pass : str
         Password for the MySQL user where the FLUTE DB is stored.
-    db_host: str 
+    db_host : str
         Host name for the local machine where the coopy of the FLUTE DB is stored.
-    db_name: str
+    db_name : str
         Name of the local copy of the FLUTE DB.
-    prot: str
-        Input protein 
+    prot : str
+        Input protein
 
-    Returns
-    -------
-    Saves a file of related paper IDs
-    
-
-    '''
+    """
 
     tmp1 = float(time.time())
 
@@ -54,7 +51,7 @@ def getRelatedPapers(db_user,db_pass,db_host,db_name,prot):
         all_prot.append(prot)
 
     refLogs = []
-    
+
     db_cnx  = mysql.connector.connect(user = db_user, password = db_pass, host = db_host, database = db_name, charset='utf8')
     cursorGetProts = db_cnx.cursor()
     cursorOGS = db_cnx.cursor()
@@ -120,7 +117,7 @@ def getRelatedPapers(db_user,db_pass,db_host,db_name,prot):
 def getRelatedInts(db_user,db_pass,db_host,db_name,f):
 
     '''
-    This function retrieves interactions from the same papers as 
+    This function retrieves interactions from the same papers as
 
     Parameters
     ----------
@@ -129,7 +126,7 @@ def getRelatedInts(db_user,db_pass,db_host,db_name,f):
         Name of the MySQL user where the FLUTE DB is stored.
     db_pass: str
         Password for the MySQL user where the FLUTE DB is stored.
-    db_host: str 
+    db_host: str
         Host name for the local machine where the coopy of the FLUTE DB is stored.
     db_name: str
         Name of the local copy of the FLUTE DB.
@@ -195,7 +192,7 @@ def getRelatedInts(db_user,db_pass,db_host,db_name,f):
 
     paperNum = list(set(log[:,3]))
 
-    
+
 def getRecentPapers(f):
 
     '''
@@ -206,10 +203,6 @@ def getRecentPapers(f):
     f: str
         Input filename that contains list of interactions
 
-    Returns
-    -------
-
-    None
 
     '''
 
@@ -227,7 +220,7 @@ def getRecentPapers(f):
                 if(y[1]==p):
 
                     outf.write(y[0])
-            
+
 
             outf.write("\n")
 
@@ -245,11 +238,6 @@ def getDups(f):
     f: str
         Filename of the list of interactions to be counted.
 
-
-    Returns
-    -------
-
-    None
 
     '''
 
@@ -299,9 +287,9 @@ def getArgs():
         parser.add_argument('scores', type=str,help="Database scores output filename")
         parser.add_argument('-g','--get_duplicates',action="store_true",default=False,help="Whether to output duplicate interactions")
         parser.add_argument('-p','--recentPapers',action="store_true",default=False,help="If true, exempts recent papers from filtering")
-        parser.add_argument('-q','--protQuery',help="If true, finds interactions for protein ID") 
-        parser.add_argument('-r','--relatedInts',action="store_true",default=False,help="If true, adds additional interactions related to input.")      
-        
+        parser.add_argument('-q','--protQuery',help="If true, finds interactions for protein ID")
+        parser.add_argument('-r','--relatedInts',action="store_true",default=False,help="If true, adds additional interactions related to input.")
+
         args = parser.parse_args()
 
         return(args)
@@ -318,7 +306,7 @@ def convID(db_user,db_pass,db_host,db_name,X):
         Name of the MySQL user where the FLUTE DB is stored.
     db_pass: str
         Password for the MySQL user where the FLUTE DB is stored.
-    db_host: str 
+    db_host: str
         Host name for the local machine where the coopy of the FLUTE DB is stored.
     db_name: str
         Name of the local copy of the FLUTE DB.
@@ -344,7 +332,7 @@ def convID(db_user,db_pass,db_host,db_name,X):
 
         if(unip):
 
-            int_query = ("SELECT stringID FROM unistringmapping WHERE uniID = %s OR uniID= %s OR ogs= %s") 
+            int_query = ("SELECT stringID FROM unistringmapping WHERE uniID = %s OR uniID= %s OR ogs= %s")
 
             cursor.execute(int_query,(unip,commonName,commonName))
 
@@ -370,7 +358,7 @@ def findInts(db_user,db_pass,db_host,db_name,ints,es,ts,ds):
         Name of the MySQL user where the FLUTE DB is stored.
     db_pass: str
         Password for the MySQL user where the FLUTE DB is stored.
-    db_host: str 
+    db_host: str
         Host name for the local machine where the coopy of the FLUTE DB is stored.
     db_name: str
         Name of the local copy of the FLUTE DB.
@@ -398,8 +386,8 @@ def findInts(db_user,db_pass,db_host,db_name,ints,es,ts,ds):
     st = time.time()
 
     for i in range(ints.shape[0]):
-    
-        #IC interaction ID's 
+
+        #IC interaction ID's
         id1 = str(ints[i,0]) #this is actually the name
         name1 = str(ints[i,1]) #this is actually the id
         uid1 = str(ints[i,2])
@@ -417,7 +405,7 @@ def findInts(db_user,db_pass,db_host,db_name,ints,es,ts,ds):
         if(sid1 and sid2):
 
             #Select all matching interactions from STRING DB
-            int_query = ("SELECT protein1, protein2, escore,tscore,ascore,dscore FROM ppi_detail_v11 WHERE ((protein1 = %s AND protein2 = %s ) OR (protein1 = %s AND protein2 = %s)) AND (escore>=%s AND tscore>=%s AND dscore>=%s)") 
+            int_query = ("SELECT protein1, protein2, escore,tscore,ascore,dscore FROM ppi_detail_v11 WHERE ((protein1 = %s AND protein2 = %s ) OR (protein1 = %s AND protein2 = %s)) AND (escore>=%s AND tscore>=%s AND dscore>=%s)")
             cursor.execute(int_query, (sid1,sid2,sid2,sid1,es,ts,ds))
 
 
@@ -439,7 +427,7 @@ def findInts(db_user,db_pass,db_host,db_name,ints,es,ts,ds):
 
 
         #Biogrid
-        int_query3 = ("SELECT ogsA,ogsB FROM biogrid WHERE (ogsA = %s AND ogsB = %s) OR (ogsA = %s AND ogsB = %s)") 
+        int_query3 = ("SELECT ogsA,ogsB FROM biogrid WHERE (ogsA = %s AND ogsB = %s) OR (ogsA = %s AND ogsB = %s)")
         cursor3.execute(int_query3, (name1,name2,name1,name2))
 
         for (bi1,bi2) in cursor3:
@@ -454,7 +442,7 @@ def findInts(db_user,db_pass,db_host,db_name,ints,es,ts,ds):
             logs.append([name1,name2, evidence,"",""])
 
         #STITCH
-        int_q2 = ("SELECT chem,prot,exp,text,data FROM pci_detail WHERE ((chem= %s AND prot = %s) OR (chem= %s AND prot = %s))") 
+        int_q2 = ("SELECT chem,prot,exp,text,data FROM pci_detail WHERE ((chem= %s AND prot = %s) OR (chem= %s AND prot = %s))")
         cursor4.execute(int_q2, (chemid1,sid2,chemid2,sid1))
 
         for (chem, prot,exp,pred,data) in cursor4:
@@ -544,7 +532,7 @@ def getChem(X):
         id2 = X[z,9]
 
         if(id1.isdigit()):
-            num_z =  8 - len(id1) 
+            num_z =  8 - len(id1)
             trailing_z = ''
 
             for j in range(num_z):
@@ -557,7 +545,7 @@ def getChem(X):
 
 
         if(id2.isdigit()):
-            num_z =  8 - len(id2) 
+            num_z =  8 - len(id2)
             trailing_z = ''
 
             for j in range(num_z):
@@ -598,7 +586,7 @@ def getGo(a):
             a[i,15] = a[i,9].upper()
 
     return(a)
-    
+
 def main():
 
     args = getArgs()
@@ -645,7 +633,7 @@ def main():
                 a = df[['RegulatedName','RegulatedID','RegulatedType','RegulatorName','RegulatorID','RegulatorType','PaperID']]
 
                 allInts= a.values
-                
+
                 getID = np.append(allInts[:,1],allInts[:,4]).astype(">U50")
                 uniqID = np.unique(getID)
 
@@ -668,7 +656,7 @@ def main():
                 intComp = np.empty((npIDs.shape[0],17),dtype=">U750")
                 intComp[:,0] = npIDs[:,0] #element1 name
                 intComp[:,1] = np.char.upper(npIDs[:,1]) # element 1 id
-                intComp[:,8] = npIDs[:,2]        
+                intComp[:,8] = npIDs[:,2]
                 intComp[:,9] = np.char.upper(npIDs[:,3])
 
                 intComp_c = getChem(intComp) #get cidm ids
@@ -698,7 +686,7 @@ def main():
                 fInts = findInts(db_user,db_pass,db_host,db_name,intComp,es,ts,ds)
                 fHeaders = ["Element 1 ID", "Element 2 ID", "STRING escore","STRING tscore","STRING dscore"]
 
-                fIntsHead = np.vstack([fHeaders,fInts])                
+                fIntsHead = np.vstack([fHeaders,fInts])
                 np.savetxt(outp2,fIntsHead, delimiter=",",fmt='%s\t%s\t%s\t%s\t%s',encoding="utf-8")
 
                 xl = f_in
@@ -721,7 +709,7 @@ def main():
 
                     for n in range(fInts.shape[0]): #go through all original ints and find evidence
 
-                        for k in range(IC.shape[0]): 
+                        for k in range(IC.shape[0]):
 
                             ic1 = str(rowIDs[k,0]).lower()
                             ic2 = str(rowIDs[k,1]).lower()
