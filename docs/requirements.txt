@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc688b609f44fbea343f15b457a75eeee5c695b4aeabd9094c7c7f321cd2b982
-size 248
+# File: docs/requirements.txt
+
+# Defining the exact version will make sure things don't break
+sphinx==4.5.0
+sphinx_rtd_theme==1.1.1
+sphinx-copybutton
+readthedocs-sphinx-search==0.1.0
+matplotlib==3.3.4
+jinja2<3.1
+pandas>1.3.0
+argparse==1.4.0
+rst2pdf
