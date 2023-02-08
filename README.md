@@ -1,4 +1,4 @@
-# VIOLIN
+# FLUTE
 [![Documentation Status](https://readthedocs.org/projects/flute/badge/?version=latest)](https://melody-flute.readthedocs.io/en/latest/?badge=latest)
 
 ### (The FiLter for Understanding True Events)
