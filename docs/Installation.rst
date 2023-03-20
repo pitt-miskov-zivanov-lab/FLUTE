@@ -3,30 +3,53 @@ Installation instructions
 
 MySQL
 -----
-1. Download the appropriate distribution of `MySQL <https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/>`_.
-2. Restart your computer and add to path if necessary.
-3. From the command line, access the MySQL environment by typing::
+1. Download the appropriate distribution of `MySQL <https://dev.mysql.com/downloads/mysql/>`_. During the installation process, you will be asked to create a local username (``root`` will be default username) and password to keep your database private.
+
+.. Attention::
+ Test your installation via running ``mysql`` in terminal. If it's not a recognized command, you may need to add it to environmental path and restart your computer.
+
+2. From the command line, access the MySQL environment by typing::
 
 	mysql -u root
 
+or replacing ``root`` with your customized username::
+
+	mysql -u YOUR_USER_NAME
+
+You can exit MySQL environment by typing ``\q``.
+
 .. Attention::
- If the first prompt fails, you may need to enter the password associated with your computer user account::
+ If the prompt fails, you may need to enter the password associated with your user account (set in step 1 during installation)::
 
 	mysql -u root -p
+ 
+ or::
+ 
+ 	mysql -u YOUR_USER_NAME -p
+ 
+3. Install `MySQL Python connector <https://dev.mysql.com/doc/connector-python/en/>`_. If **pip** has been installed on your computer, use::
 
-4. You may choose to create a local username and password to keep your database private.
-5. Install `MySQL Python connector <https://dev.mysql.com/doc/connector-python/en/>`_.
+	pip install mysql-connector-python
 
 
 FLUTE database
 --------------
 
-1. Un-zip the FLUTE.sql file downloaded from Github.
-2. Log in to the MySQL environment using your username and password.
-3. From there, create an empty database.
-4. Log back out, and again from the command line::
+1. Download `flute.sql <https://github.com/pitt-miskov-zivanov-lab/FLUTE/blob/master/supplementary/flute.sql.zip>`_ and unzip it as ``flute.sql``.
+2. In the same directory of your local copy ``flute.sql``, access the MySQL environment using your username and password::
 
-	mysql -u username -p database_name < FLUTE.sql
+	mysql -u root -p
 
-5. If you created a username and password, this will be your username in the above command, but do not enter your password above! Once you hit enter, it will prompt you for the password.
+and create an empty database named ``flute`` (or whatever name you prefer ``YOUR_DATABASE_NAME``)::
+
+	CREATE DATABASE YOUR_DATABASE_NAME;
+	USE YOUR_DATABASE_NAME;
+
+Note that ";" is required to end each MySQL command, you can exit MySQL environment by typing ``\q``.
+3. Log out MySQL environment, and again from the command line (you can perform the following command because you are already in the same directory of your local copy ``flute.sql``, otherwise you have to specify the path to it)::
+
+	mysql -u YOUR_USER_NAME -p YOUR_DATABASE_NAME < flute.sql
+
+.. Note::
+ The previous command loads a curated file ``flute.sql`` into a database named ``YOUR_DATABASE_NAME`` and stores it in your own MySQL environment. Be patient here as it may take minutes to finish loading.
 6. You can now run the “run_FLUTE.py” script, you will need to enter the database, host, username, etc. as an argument from the command line.
