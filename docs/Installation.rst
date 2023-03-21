@@ -6,9 +6,9 @@ MySQL
 1. Download the appropriate distribution of `MySQL <https://dev.mysql.com/downloads/mysql/>`_. During the installation process, you will be asked to create a local username (``root`` will be default username) and password to keep your database private.
 
 .. Attention::
- Test your installation via typing ``mysql`` in terminal. If it's not a recognized command, you may need to add it to environmental path and restart your computer.
+ Test your installation via typing ``mysql`` in terminal. If it's not a recognized command, you may need to permanently add it to environmental path and restart your computer.
 
-2. From the command line, access the MySQL environment by typing::
+2. From the command line, access MySQL environment by typing::
 
 	mysql -u root
 
@@ -36,7 +36,7 @@ FLUTE database
 --------------
 
 1. Download `flute.sql <https://github.com/pitt-miskov-zivanov-lab/FLUTE/blob/master/supplementary/flute.sql.zip>`_ and unzip it as ``flute.sql``.
-2. In the same directory of your local copy ``flute.sql``, access the MySQL environment using your username and password::
+2. In the same directory of your downloaded copy ``flute.sql``, access MySQL environment using your username and password::
 
 	mysql -u root -p
 
@@ -52,6 +52,7 @@ FLUTE database
 	mysql -u YOUR_USER_NAME -p YOUR_DATABASE_NAME < flute.sql
 
 .. Note::
- You can perform the command because you are already in the same directory of your local copy ``flute.sql``, otherwise you have to specify the path to it. The previous command aims to load a curated file ``flute.sql`` into a database named ``YOUR_DATABASE_NAME`` and stores it in your own MySQL environment. Be patient here as it may take minutes to finish loading.
- 
-4. You can now run the script, you will need to enter the database name(``YOUR_DATABASE_NAME``), host(``localhost`` for Mac and deskyop name for Windows), username, etc. as an argument from the command line.
+ You can perform the command because you are already in the same directory of your local copy ``flute.sql``, otherwise you have to specify the path to it. Also, this command aims to load the curated file ``flute.sql`` into a database named ``YOUR_DATABASE_NAME`` and store the database in your own MySQL environment. Be patient here as it may take minutes to finish loading.
+
+4. You can now run FLUTE tool (via terminal, Jupyter notebook or GUI), you will need to enter the database name (``YOUR_DATABASE_NAME``), host name (``localhost`` for MacOS/Linux and desktop name for Windows), MySQL username (``root`` or ``YOUR_USER_NAME``) and MySQL password as arguments.
+ for Windows), username, etc. as an argument from the command line.
