@@ -1,1 +1,2 @@
-*.zip filter=lfs diff=lfs merge=lfs -text
+supplementary/flute.sql.zip filter=lfs diff=lfs merge=lfs -text
+supplementary/oa_file_list.txt.zip filter=lfs diff=lfs merge=lfs -text

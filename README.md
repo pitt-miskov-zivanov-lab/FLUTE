@@ -21,10 +21,10 @@ Understanding disease at the cellular level requires detailed knowledge of signa
 ## Installation
 - Un-zip the [`flute.sql.zip`](supplementary/flute.sql.zip) file.
 - Log in to the MySQL environment using your username and password.
-- From there, create an empty database (any name is fine, I recommend the classic “FLUTE”).
+- From there, create an empty database named ``YOUR_DATABASE_NAME``(any name is fine, I recommend the classic ``flute``).
 - Log back out, and again from the command line
   ```
-  mysql -u username -p database_name < FLUTE.sql
+  mysql -u YOUR_USER_NAME -p YOUR_DATABASE_NAME < flute.sql
   ```
 - If you created a username and password, this will be your username in the above command, but do not enter your password above! Once you hit enter, it will prompt you for the password.
 - You can now run the [`run_FLUTE.py`](src/run_FLUTE.py) script, you will need to enter the database, host, username, etc. as an argument from the command line.
@@ -33,8 +33,8 @@ Understanding disease at the cellular level requires detailed knowledge of signa
 To filter interactions, run [`run_FLUTE.py`](src/run_FLUTE.py). You must have Python3 installed. The script takes several parameters:
 - MySQL username
 - MySQL password
-- Host name - “localhost” for MacOSX, desktop name for Windows
-- Database name (see step 3 from FLUTE DB installation instructions)
+- Host name - ``localhost`` for MacOS/Linux, desktop name for Windows
+- Database name (``YOUR_DATABASE_NAME``)
 - Input filename
 - Output filename for interactions
 - Output filename for scores
@@ -44,7 +44,7 @@ Input files must have the following headers: ``RegulatedName, RegulatedID, Regul
 For additional FLUTE functionality beyond interaction filtering (get related papers, related interactions in databases, etc.), first run [`years.py`](src/years.py)
 
 ## MySQL
-- Download the appropriate distribution for your OS from [here](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
+- Download the appropriate distribution for your OS from [here](https://dev.mysql.com/downloads/mysql/)
 - Restart your computer, and add to path if necessary.
 - From the command line, access the MySQL environment by typing:
   ```

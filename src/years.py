@@ -1,4 +1,5 @@
-import sys,os
+import sys, os
+import re
 import numpy as np
 
     #pass all interactions and paper IDs
