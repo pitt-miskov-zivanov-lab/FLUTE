@@ -55,4 +55,3 @@ FLUTE database
  You can perform the command because you are already in the same directory of your local copy ``flute.sql``, otherwise you have to specify the path to it. Also, this command aims to load the curated file ``flute.sql`` into a database named ``YOUR_DATABASE_NAME`` and store the database in your own MySQL environment. Be patient here as it may take minutes to finish loading.
 
 4. You can now run FLUTE tool (via terminal, Jupyter notebook or GUI), you will need to enter the database name (``YOUR_DATABASE_NAME``), host name (``localhost`` for MacOS/Linux and desktop name for Windows), MySQL username (``root`` or ``YOUR_USER_NAME``) and MySQL password as arguments.
- for Windows), username, etc. as an argument from the command line.
