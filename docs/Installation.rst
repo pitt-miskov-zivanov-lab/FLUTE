@@ -6,7 +6,7 @@ MySQL
 1. Download the appropriate distribution of `MySQL <https://dev.mysql.com/downloads/mysql/>`_. During the installation process, you will be asked to create a local username (``root`` will be default username) and password to keep your database private.
 
 .. Attention::
- Test your installation via typing ``mysql`` in terminal. If it's not a recognized command, you may need to permanently add it to environmental path and restart your computer. For example, in some OS, you can achieve via typing ``export PATH="/usr/local/mysql/bin:$PATH" ``
+ Test your installation via typing ``mysql`` in terminal. If it's not a recognized command, you may need to permanently add it to environmental path and restart your computer. For example, in some OS, you can add via ``export PATH="/usr/local/mysql/bin:$PATH"`` in terminal
 
 2. From the command line, access MySQL environment by typing::
 
