@@ -587,6 +587,147 @@ def getGo(a):
 
     return(a)
 
+def outputs(db_name, db_host, db_user, db_pass, f_in, filtered_reading, scores):
+    """
+    This function will return the final outputs
+
+    Parameters
+    ----------
+
+    db_name: str
+        The name of the database
+    db_host: str
+        The name of the mysql host
+    db_user: str
+        The name of the user
+    db_pass: str
+        The password of the mysql
+    f_in: str
+        The path of file
+    filtered_reading: str
+        tsv file path
+    scores: str
+        tsv file path containing STRING score
+    
+    Returns
+    -------
+
+    """
+    escores = [0]
+    tscores = [0]
+    dscores = [0]
+
+    for es in escores:
+
+        for ts in tscores:
+
+            for ds in dscores:
+
+                start = time.time()
+                df = pd.read_excel(f_in)
+                df = df.fillna('').astype(str)
+                # please double-check header ids
+                a = df[['Regulated Name', 'Regulated ID', 'Regulated Type', 'Regulator Name', 'Regulator ID', 'Regulator Type',
+                        'Paper IDs']]
+
+                allInts = a.values
+
+                getID = np.append(allInts[:, 1], allInts[:, 4]).astype(">U50")
+                uniqID = np.unique(getID)
+
+                blankDict = np.zeros((uniqID.shape[0], 3), dtype=">U50")
+                blankDict[:, 0] = uniqID
+
+                for i in range(blankDict.shape[0]):
+                    for j in range(allInts.shape[0]):
+                        if (allInts[j, 1] == blankDict[i, 0]):
+                            blankDict[i, 1] = allInts[j, 0]
+
+                        elif (allInts[j, 4] == blankDict[i, 0]):
+                            blankDict[i, 1] = allInts[j, 3]
+
+                nameDict = convID(db_user, db_pass, db_host, db_name, blankDict)
+
+                all_ids = uniOnly(allInts)  # returns lower-case interactions:ppis/pcis/pbpis
+                npIDs = np.array(all_ids).reshape(-1, 4).astype(">U750")
+
+                intComp = np.empty((npIDs.shape[0], 17), dtype=">U750")
+                intComp[:, 0] = npIDs[:, 0]  # element1 name
+                intComp[:, 1] = np.char.upper(npIDs[:, 1])  # element 1 id
+                intComp[:, 8] = npIDs[:, 2]
+                intComp[:, 9] = np.char.upper(npIDs[:, 3])
+
+                intComp_c = getChem(intComp)  # get cidm ids
+                intComp = getGo(intComp_c)
+
+                for i in range(intComp.shape[0]):
+                    id1 = intComp[i, 1].upper()
+                    id2 = intComp[i, 9].upper()
+
+                    for j in range(nameDict.shape[0]):
+
+                        if (id1 == nameDict[j, 0].upper()):
+                            intComp[i, 3] = str(nameDict[j, 2])
+
+                            if (nameDict[j, 2]):
+                                intComp[i, 2] = str(nameDict[j, 0])
+
+                        if (id2 == nameDict[j, 0].upper()):
+                            intComp[i, 11] = str(nameDict[j, 2])
+
+                            if (nameDict[j, 2]):
+                                intComp[i, 10] = str(nameDict[j, 0])
+
+                outp = filtered_reading
+                outp2 = scores
+
+                fInts = findInts(db_user, db_pass, db_host, db_name, intComp, es, ts, ds)
+                fHeaders = ["Element 1 ID", "Element 2 ID", "STRING escore", "STRING tscore", "STRING dscore"]
+
+                fIntsHead = np.vstack([fHeaders, fInts])
+                np.savetxt(outp2, fIntsHead, delimiter=",", fmt='%s\t%s\t%s\t%s\t%s', encoding="utf-8")
+
+                #xl = f_in
+
+                #IC_df = pd.read_excel(xl)
+                IC_df = df
+                IC = IC_df.values
+
+                fUniq = np.unique(fInts, axis=0)
+                fInts = fUniq
+
+                rowDf = IC_df[['Regulated ID', 'Regulator ID']]
+                rowIDs = rowDf.values
+
+                with open(outp, 'w+', encoding="utf-8") as outfile:
+                    for dc in IC_df.columns:
+                        outfile.write(dc)
+                        outfile.write("\t")
+
+                    outfile.write("\n")
+
+                    for n in range(fInts.shape[0]):  # go through all original ints and find evidence
+
+                        for k in range(IC.shape[0]):
+
+                            ic1 = str(rowIDs[k, 0]).lower()
+                            ic2 = str(rowIDs[k, 1]).lower()
+
+                            # Write to file:check both directions
+
+                            if ((fInts[n, 0].lower() == ic1 and fInts[n, 1].lower() == ic2) or (
+                                    fInts[n, 0].lower() == ic2 and fInts[n, 1].lower() == ic1)):
+
+                                for m in range(IC.shape[1]):
+                                    outfile.write(str(IC[k, m]))
+                                    outfile.write("\t")
+
+                                outfile.write("\n")
+
+                outfile.close()
+                end = time.time() - start
+                print("File filtered: " + str(f_in) + " Time: " + str(end) + " seconds")
+
 def main():
 
     args = getArgs()
@@ -619,116 +760,7 @@ def main():
 
         getRelatedInts(db_user,db_pass,db_host,db_name,f_in)
 
-    for es in escores:
-
-        for ts in tscores:
-
-            for ds in dscores:
-
-                start = time.time()
-                df= pd.read_excel(f_in)
-
-
-                #please double-check header ids
-                a = df[['RegulatedName','RegulatedID','RegulatedType','RegulatorName','RegulatorID','RegulatorType','PaperID']]
-
-                allInts= a.values
-
-                getID = np.append(allInts[:,1],allInts[:,4]).astype(">U50")
-                uniqID = np.unique(getID)
-
-                blankDict = np.zeros((uniqID.shape[0],3),dtype=">U50")
-                blankDict[:,0] = uniqID
-
-                for i in range(blankDict.shape[0]):
-                    for j in range(allInts.shape[0]):
-                        if(allInts[j,1]==blankDict[i,0]):
-                           blankDict[i,1] =allInts[j,0]
-
-                        elif(allInts[j,4]==blankDict[i,0]):
-                            blankDict[i,1] = allInts[j,3]
-
-                nameDict = convID(db_user,db_pass,db_host,db_name,blankDict)
-
-                all_ids = uniOnly(allInts) #returns lower-case interactions:ppis/pcis/pbpis
-                npIDs = np.array(all_ids).reshape(-1,4).astype(">U750")
-
-                intComp = np.empty((npIDs.shape[0],17),dtype=">U750")
-                intComp[:,0] = npIDs[:,0] #element1 name
-                intComp[:,1] = np.char.upper(npIDs[:,1]) # element 1 id
-                intComp[:,8] = npIDs[:,2]
-                intComp[:,9] = np.char.upper(npIDs[:,3])
-
-                intComp_c = getChem(intComp) #get cidm ids
-                intComp = getGo(intComp_c)
-
-                for i in range(intComp.shape[0]):
-                    id1 = intComp[i,1].upper()
-                    id2 = intComp[i,9].upper()
-
-                    for j in range(nameDict.shape[0]):
-
-                        if(id1==nameDict[j,0].upper()):
-                            intComp[i,3] = str(nameDict[j,2])
-
-                            if(nameDict[j,2]):
-                                intComp[i,2] = str(nameDict[j,0])
-
-                        if(id2==nameDict[j,0].upper()):
-                            intComp[i,11] = str(nameDict[j,2])
-
-                            if(nameDict[j,2]):
-                                intComp[i,10] = str(nameDict[j,0])
-
-                outp = args.scores
-                outp2 = args.filtered_reading
-
-                fInts = findInts(db_user,db_pass,db_host,db_name,intComp,es,ts,ds)
-                fHeaders = ["Element 1 ID", "Element 2 ID", "STRING escore","STRING tscore","STRING dscore"]
-
-                fIntsHead = np.vstack([fHeaders,fInts])
-                np.savetxt(outp2,fIntsHead, delimiter=",",fmt='%s\t%s\t%s\t%s\t%s',encoding="utf-8")
-
-                xl = f_in
-
-                IC_df = pd.read_excel(xl)
-                IC = IC_df.values
-
-                fUniq = np.unique(fInts, axis=0)
-                fInts = fUniq
-
-                rowDf = IC_df[['RegulatedID','RegulatorID']]
-                rowIDs  = rowDf.values
-
-                with open(outp, 'w+', encoding="utf-8") as outfile:
-                    for dc in IC_df.columns:
-                       outfile.write(dc)
-                       outfile.write("\t")
-
-                    outfile.write("\n")
-
-                    for n in range(fInts.shape[0]): #go through all original ints and find evidence
-
-                        for k in range(IC.shape[0]):
-
-                            ic1 = str(rowIDs[k,0]).lower()
-                            ic2 = str(rowIDs[k,1]).lower()
-
-                            #Write to file:check both directions
-
-                            if((fInts[n,0].lower()==ic1 and fInts[n,1].lower()==ic2) or (fInts[n,0].lower()==ic2 and fInts[n,1].lower()==ic1)):
-
-                                for m in range(IC.shape[1]):
-
-                                    outfile.write(str(IC[k,m]))
-                                    outfile.write("\t")
-
-                                outfile.write("\n")
-
-
-                outfile.close()
-                end = time.time() - start
-                print("File filtered: " + str(f_in) + " Time: " + str(end) + " seconds")
+    outputs(db_name, db_host, db_user, db_pass, f_in, args.filtered_reading, args.scores)
 
 if __name__ == '__main__':
     main()
