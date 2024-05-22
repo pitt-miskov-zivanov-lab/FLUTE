@@ -1,0 +1,11 @@
+.wy-table-responsive table td {
+    white-space: normal;
+}
+
+.sticky-first-column table th:first-child,
+.sticky-first-column table td:first-child {
+    position: sticky;
+    width:30px;
+    left: 0;
+    background-color: white; 
+    z-index: 10;}
