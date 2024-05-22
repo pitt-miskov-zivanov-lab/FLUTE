@@ -284,3 +284,20 @@ What's Inside flute.sql
    |    19184 |
    +----------+
    1 row in set (0.01 sec)
+
+
+4. Summarize the status of tables in flute.sql as follows
+
+.. csv-table::
+    :header: Table Name, Row Count, Column Names
+    :widths: 30, 20, 50
+    
+   actions_source, 10066005, "``protein1``|``protein2``|``mode``|``sources``"
+   biogrid, 344914, "intID|entrezA|entrezB|bIDA|bIDB|nameA|nameB|ogsA|ogsB|synA|synB|expSys|expSysT|author|PubID|orgA|orgB|thput|scre|modi|phen|qual|tg|sourceDB"
+   goterms, 279924, "b1|id1|unknown1|goterm|ref|evidence|pfam|unknown2|name|lbl|type|taxon|date|db2"
+   pci_detail, 15473939, "chem|prot|exp|pred|data|text|score"
+   ppi_actions, 3470907, "protein1|protein2|mode|action|direction|acting|score"
+   ppi_detail_v11, 11759454, "protein1|protein2|nscore|fscore|cscore|ascore|escore|dscore|tscore"
+   protein_info, 24584629, "internal_id|external_id|species_id|pref_name"
+   reactome, 61230, "upID1|upID2|intType|context|ref"
+   unistringmapping, 19184, "uniID|ogs|stringID|conf|unk"
