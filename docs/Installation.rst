@@ -288,7 +288,7 @@ What's Inside flute.sql
 
 4. Summarize the status of tables in flute.sql as follows
 
-.. csv-table::
+.. csv-table:: flute.sql Tables Summary
     :header: Table Name, Row Count, Column Names
     :widths: 30, 20, 50
     
@@ -301,3 +301,4 @@ What's Inside flute.sql
    protein_info, 24584629, "``internal_id`` | ``external_id`` | ``species_id`` | ``pref_name``"
    reactome, 61230, "``upID1`` | ``upID2`` | ``intType`` | ``context`` | ``ref``"
    unistringmapping, 19184, "``uniID`` | ``ogs`` | ``stringID`` | ``conf`` | ``unk``"
+
