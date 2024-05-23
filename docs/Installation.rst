@@ -290,7 +290,7 @@ What's Inside flute.sql
 
 .. csv-table::
    :header: Table Name, Row Count, Column Names
-   :widths: 30, 20, 50
+   :widths: 20, 15, 65
     
    actions_source, 10066005, "``protein1`` | ``protein2`` | ``mode`` | ``sources``"
    biogrid, 344914, "``intID`` | ``entrezA`` | ``entrezB`` | ``bIDA`` | ``bIDB`` | ``nameA`` | ``nameB`` | ``ogsA`` | ``ogsB`` | ``synA`` | ``synB`` | ``expSys`` | ``expSysT`` | ``author`` | ``PubID`` | ``orgA`` | ``orgB`` | ``thput`` | ``scre`` | ``modi`` | ``phen`` | ``qual`` | ``tg`` | ``sourceDB``"
