@@ -288,7 +288,7 @@ What's Inside flute.sql
 
 4. Summarize the status of tables in flute.sql as follows
 
-.. csv-table:: Tables Summary in flute.sql
+.. csv-table::
    :header: Table Name, Row Count, Column Names
    :widths: 30, 20, 50
     
