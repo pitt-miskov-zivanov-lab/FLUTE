@@ -288,9 +288,9 @@ What's Inside flute.sql
 
 4. Summarize the status of tables in flute.sql as follows
 
-.. csv-table:: flute.sql Tables Summary
-    :header: Table Name, Row Count, Column Names
-    :widths: 30, 20, 50
+.. csv-table:: Tables Summary in flute.sql
+   :header: Table Name, Row Count, Column Names
+   :widths: 30, 20, 50
     
    actions_source, 10066005, "``protein1`` | ``protein2`` | ``mode`` | ``sources``"
    biogrid, 344914, "``intID`` | ``entrezA`` | ``entrezB`` | ``bIDA`` | ``bIDB`` | ``nameA`` | ``nameB`` | ``ogsA`` | ``ogsB`` | ``synA`` | ``synB`` | ``expSys`` | ``expSysT`` | ``author`` | ``PubID`` | ``orgA`` | ``orgB`` | ``thput`` | ``scre`` | ``modi`` | ``phen`` | ``qual`` | ``tg`` | ``sourceDB``"
