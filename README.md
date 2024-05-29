@@ -19,7 +19,7 @@ The FiLter for Understanding True Events (FLUTE) tool seeks to identify high-con
 Understanding disease at the cellular level requires detailed knowledge of signaling networks. To aid in this task, many advances have been made in the field of natural language processing (NLP) to extract signaling events from biomedical literature. However, even state-of-the-art NLP methods incorrectly interpret some signaling events described in the literature.
 
 ## Installation
-- Un-zip the [`flute.sql.zip`](supplementary/flute.sql.zip) file.
+- Unzip the [`flute.sql.zip`](supplementary/flute.sql.zip) file.
 - Log in to the MySQL environment using your username and password.
 - From there, create an empty database named ``YOUR_DATABASE_NAME``(any name is fine, I recommend the classic ``flute``).
 - Log back out, and again from the command line
@@ -33,7 +33,7 @@ Understanding disease at the cellular level requires detailed knowledge of signa
 To filter interactions, run [`run_FLUTE.py`](src/run_FLUTE.py). You must have Python3 installed. The script takes several parameters:
 - MySQL username
 - MySQL password
-- Host name - ``localhost`` for MacOS/Linux, desktop name for Windows
+- Host name - ``localhost`` for macOS/Linux, desktop name for Windows
 - Database name (``YOUR_DATABASE_NAME``)
 - Input filename
 - Output filename for interactions
@@ -41,7 +41,7 @@ To filter interactions, run [`run_FLUTE.py`](src/run_FLUTE.py). You must have Py
 
 Input files must have the following headers: ``RegulatedName, RegulatedID, RegulatedType, RegulatorName, RegulatorID, RegulatorType, PaperID``. Output files include list of reading interactions that pass filtration, and the filtration scores for those filtered interactions.
 
-For additional FLUTE functionality beyond interaction filtering (get related papers, related interactions in databases, etc.), first run [`years.py`](src/years.py)
+For additional FLUTE functionality beyond interaction filtering (get related papers, related interactions in databases, etc.), check python -h
 
 ## MySQL
 - Download the appropriate distribution for your OS from [here](https://dev.mysql.com/downloads/mysql/)

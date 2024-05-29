@@ -10,12 +10,13 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-autodoc_mock_imports = ['mysql',"mysqlclient","mysql.connector"]
 
 import os
 import sys
 import sphinx_rtd_theme
 import sphinx_copybutton
+
+autodoc_mock_imports = ['mysql', "mysqlclient", "mysql.connector"]
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.getcwd(), os.pardir, 'src')))
 
@@ -42,16 +43,16 @@ release = 'Latest'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.autodoc',
-            'sphinx.ext.autosummary',
-            'sphinx.ext.mathjax',
-            'sphinx.ext.viewcode',
-            'sphinx.ext.intersphinx',
-            'sphinx_copybutton',
-            'sphinx.ext.autosectionlabel',
-            'sphinx_rtd_theme',
-            'sphinx.ext.napoleon',
-            'rst2pdf.pdfbuilder',
-            'sphinx.ext.extlinks']
+              'sphinx.ext.autosummary',
+              'sphinx.ext.mathjax',
+              'sphinx.ext.viewcode',
+              'sphinx.ext.intersphinx',
+              'sphinx_copybutton',
+              'sphinx.ext.autosectionlabel',
+              'sphinx_rtd_theme',
+              'sphinx.ext.napoleon',
+              'rst2pdf.pdfbuilder',
+              'sphinx.ext.extlinks']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -79,5 +80,7 @@ html_static_path = ['_static']
 html_css_files = [
     '_static/custom.css',
 ]
+
+
 def setup(app):
-   app.add_css_file('custom.css')
+    app.add_css_file('custom.css')

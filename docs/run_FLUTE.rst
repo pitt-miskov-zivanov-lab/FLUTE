@@ -7,31 +7,33 @@ The functions in this module ground element names and check against the FLUTE da
 Functions
 ---------
 .. currentmodule:: run_FLUTE
-.. autofunction:: getRelatedPapers
+.. autofunction:: filter_protein_ints
 
 .. currentmodule:: run_FLUTE
-.. autofunction:: getRelatedInts
+.. autofunction:: get_chem_id
 
 .. currentmodule:: run_FLUTE
-.. autofunction:: getRecentPapers
+.. autofunction:: get_go_id
 
 .. currentmodule:: run_FLUTE
-.. autofunction:: getDups
+.. autofunction:: get_string_id
 
 .. currentmodule:: run_FLUTE
-.. autofunction:: convID
+.. autofunction:: get_uid
 
 .. currentmodule:: run_FLUTE
-.. autofunction:: findInts
+.. autofunction:: extract_year
 
 .. currentmodule:: run_FLUTE
-.. autofunction:: uniOnly
+.. autofunction:: filter_recent_ints
 
 .. currentmodule:: run_FLUTE
-.. autofunction:: getChem
+.. autofunction:: get_duplicates_ints
 
 .. currentmodule:: run_FLUTE
-.. autofunction:: getGo
+.. autoclass:: Query
+    :members:
+
 
 Dependencies
 ------------
