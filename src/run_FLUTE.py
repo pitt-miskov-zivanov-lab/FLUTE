@@ -24,7 +24,7 @@ def filter_protein_ints(all_ints_df: pd.DataFrame) -> pd.DataFrame:
     ----------
     all_ints_df: pd.DataFrame
         All interactions from the input file, in DataFrame format, has to include the following columns:
-         ['Regulated Name', 'Regulated ID', 'Regulated Type', 'Regulator Name', 'Regulator ID', 'Regulator Type']
+        'Regulated Name', 'Regulated ID', 'Regulated Type', 'Regulator Name', 'Regulator ID', 'Regulator Type'
 
     Returns
     -------

@@ -32,6 +32,7 @@ Functions
 
 .. currentmodule:: run_FLUTE
 .. autoclass:: Query
+    :special-members: __init__
     :members:
 
 
