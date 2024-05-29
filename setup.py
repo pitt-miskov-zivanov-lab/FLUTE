@@ -28,7 +28,6 @@ setup(
         'mysql-connector-python',
         'numpy',
         'pandas',
-        'setuptools',
         'matplotlib'
     ],
     zip_safe=False  # install as directory

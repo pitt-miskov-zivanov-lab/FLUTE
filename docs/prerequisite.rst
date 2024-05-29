@@ -1,4 +1,4 @@
-Installation
+Prerequisite
 ============
 
 MySQL Setup

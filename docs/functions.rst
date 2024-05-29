@@ -42,8 +42,7 @@ Dependencies
 ------------
 
 - `pandas <https://pandas.pydata.org>`_ library
-- `csv <https://github.com/python/cpython/blob/3.9/Lib/csv.py>`_ module
 - `numpy <https://numpy.org>`_ library
+- `matplotlib <https://matplotlib.org>`_ library
+- `networkx <https://networkx.org>`_ library
 - `MySQL Connector for Python3 <https://dev.mysql.com/doc/connector-python/en/>`_ library
-- `argparse <https://docs.python.org/3/library/argparse.html>`_ library
-- `re <https://docs.python.org/3/library/re.html>`_ library

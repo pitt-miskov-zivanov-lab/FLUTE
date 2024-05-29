@@ -621,11 +621,11 @@ def get_args():
     parser.add_argument('-g', '--drop_duplicates', action="store_true", default=False,
                         help="Whether to output duplicate interactions")
     parser.add_argument('-p', '--keep_recent_pps', action="store_true", default=False,
-                        help="If true, show interactions in recent papers")
+                        help="If added, show interactions in recent papers")
     parser.add_argument('-q', '--prot_query', nargs='?', const=None, default=None,
-                        help="If exists, finds interactions related to protein ID")
+                        help="If exists, find interactions related to protein ID")
     parser.add_argument('-r', '--add_related_ints', action="store_true", default=False,
-                        help="If true, finds additional interactions related to input that are in the same paper set")
+                        help="If added, find additional interactions that are in the same paper set")
 
     args = parser.parse_args()
 
