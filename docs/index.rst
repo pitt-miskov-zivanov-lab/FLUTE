@@ -10,7 +10,7 @@ However, even state-of-the-art NLP methods incorrectly interpret some signaling 
 
 .. image:: workflow.png
   :width: 700
-  :alt: The workflow of the FLUTE database.
+  :alt: The workflow of FLUTE tool.
 
 The FiLter for Understanding True Events (FLUTE) tool seeks to identify high-confidence signaling events from biomedical NLP output by comparing with existing biological databases. As such, FLUTE can reliably determine the confidence in the biomolecular events extracted by NLP methods and at the same time provide a speedup in event filtering by three orders of magnitude.
 
@@ -18,7 +18,7 @@ The FiLter for Understanding True Events (FLUTE) tool seeks to identify high-con
    :maxdepth: 2
    :caption: Contents
 
-   Installation
-   Usage
-   run_FLUTE
-   Legal
+   installation
+   usage
+   functions
+   legal

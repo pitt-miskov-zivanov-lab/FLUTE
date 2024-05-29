@@ -6,27 +6,28 @@ MySQL Setup
 1. Download the appropriate distribution of `MySQL <https://dev.mysql.com/downloads/mysql/>`_. During the installation process, you will be asked to create a local username (``root`` will be default username) and password to keep your database private.
 
 .. Attention::
- Test your installation via typing ``mysql`` in terminal. If it's not a recognized command, you may need to permanently add it to environmental path and restart your computer. For example, in some OS, you can add via ``export PATH="/usr/local/mysql/bin:$PATH"`` in terminal
+    Test your installation via typing ``mysql`` in terminal. If it's not a recognized command, you may need to permanently add it to environmental path and restart your computer. For example, in some OS, you can add via ``export PATH="/usr/local/mysql/bin:$PATH"`` in terminal
 
 2. From the command line, access MySQL environment by typing::
 
     mysql -u root
 
-    or replacing ``root`` with customized ``YOUR_USER_NAME``::
+or replacing ``root`` with customized ``YOUR_USER_NAME``::
    
     mysql -u YOUR_USER_NAME
 
-    You can exit MySQL environment by typing ``\q``.
+You can exit MySQL environment by typing ``\q``.
 
 .. Attention::
- If the prompt fails, you may need to enter the password associated with your user account (set in step 1 during installation)::
+    If the prompt fails, you may need to enter the password associated with your user account (set in step 1 during installation)::
 
-    mysql -u root -p
+        mysql -u root -p
  
     or::
- 
-    mysql -u YOUR_USER_NAME -p
- 
+
+        mysql -u YOUR_USER_NAME -p
+
+
 3. Install `MySQL Python connector <https://dev.mysql.com/doc/connector-python/en/>`_. If **pip** has been installed on your computer, use::
 
     pip install mysql-connector-python
@@ -40,13 +41,13 @@ FLUTE Database Creation
 
     mysql -u root -p
 
-    and create an empty database named ``flute`` (or whatever name you prefer ``YOUR_DATABASE_NAME``)::
+and create an empty database named ``flute`` (or whatever name you prefer ``YOUR_DATABASE_NAME``)::
 
     CREATE DATABASE YOUR_DATABASE_NAME;
     USE YOUR_DATABASE_NAME;
 
-    Note that ";" is required to end each MySQL command.
-   
+Note that ";" is required to end each MySQL command.
+
 3. Type ``\q`` to log out MySQL environment, and again from the command line::
 
     mysql -u YOUR_USER_NAME -p YOUR_DATABASE_NAME < flute.sql

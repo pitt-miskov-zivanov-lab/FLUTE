@@ -1,11 +1,11 @@
-run_FLUTE
-=========
+Functions in FLUTE
+==================
 
-This page describes the script that accesses the FLUTE database.
-The functions in this module ground element names and check against the FLUTE database.
+This page describes the functions supported in FLUTE tool, including general functions that run without accessing database, and query functions that access the ``flute.sql`` database.
 
-Functions
----------
+
+General Functions
+-----------------
 .. currentmodule:: run_FLUTE
 .. autofunction:: filter_protein_ints
 
@@ -30,6 +30,8 @@ Functions
 .. currentmodule:: run_FLUTE
 .. autofunction:: get_duplicates_ints
 
+Query Functions
+---------------
 .. currentmodule:: run_FLUTE
 .. autoclass:: Query
     :special-members: __init__

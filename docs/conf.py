@@ -13,8 +13,6 @@
 
 import os
 import sys
-import sphinx_rtd_theme
-import sphinx_copybutton
 
 autodoc_mock_imports = ['mysql', "mysqlclient", "mysql.connector"]
 
