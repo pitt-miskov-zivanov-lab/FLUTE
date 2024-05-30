@@ -11,3 +11,4 @@ nbsphinx
 nbsphinx-link
 rst2pdf
 pandoc
+IPython
