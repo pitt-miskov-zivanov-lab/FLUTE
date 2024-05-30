@@ -18,7 +18,8 @@ The FiLter for Understanding True Events (FLUTE) tool seeks to identify high-con
    :maxdepth: 2
    :caption: Contents
 
-   prerequisite
-   usage
-   functions
-   legal
+    prerequisite
+    usage
+    tutorial
+    functions
+    legal

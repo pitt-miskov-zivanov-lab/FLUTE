@@ -50,7 +50,8 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx_rtd_theme',
               'sphinx.ext.napoleon',
               'rst2pdf.pdfbuilder',
-              'sphinx.ext.extlinks']
+              'sphinx.ext.extlinks',
+              'nbsphinx']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
