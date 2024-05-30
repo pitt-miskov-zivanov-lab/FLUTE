@@ -38,7 +38,7 @@ some optional flag/arguments can be appended to support additional features:
     With ``-p`` or ``--keep_recent_pps``, "``python run_FLUTE.py root 12345678 localhost flute ../examples/input/example.xlsx ../examples/output/example -p``", Also output interactions published in papers of recent years
     With ``-q [PROT_QUERY]`` or ``--prot_query [PROT_QUERY]``, "``python run_FLUTE.py root 12345678 localhost flute ../examples/input/example.xlsx ../examples/output/example -q P00533,P03386``", Also find interactions related to these given protein IDs
     With ``-r`` or ``--add_related_ints``, "``python run_FLUTE.py root 12345678 localhost flute ../examples/input/example.xlsx ../examples/output/example -r``", Also find additional interactions related that are in the same paper set
-    Combine ``-g -p`` or any option, "``python run_FLUTE.py root 12345678 localhost flute ../examples/input/example.xlsx ../examples/output/example -g -p``", Do both ``-g`` and ``-p``, or any provided
+    Combine ``-g -p`` or any option, "``python run_FLUTE.py root 12345678 localhost flute ../examples/input/example.xlsx ../examples/output/example -g -p``", "Do both ``-g`` and ``-p``, or any provided"
 
 3.2 *Via notebook:* Run the provided notebook after ``cd examples/`` from FLUTE root directory. Detailed instructions can be found in markdown cells inside the notebook or at this page
 
