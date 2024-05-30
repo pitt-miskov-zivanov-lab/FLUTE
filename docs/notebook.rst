@@ -6,4 +6,4 @@ This file goes through the functions in FLUTE tool in an elaborative and interac
 .. toctree::
     :maxdepth: 2
 
-    use_FLUTE.ipynb
+    ../examples/use_FLUTE.ipynb
