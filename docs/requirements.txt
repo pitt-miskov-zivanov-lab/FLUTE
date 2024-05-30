@@ -9,4 +9,4 @@ jinja2<3.1
 pandas
 nbsphinx
 rst2pdf
-jupyter
+pandoc

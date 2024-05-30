@@ -17,6 +17,7 @@ import sys
 autodoc_mock_imports = ['mysql', "mysqlclient", "mysql.connector"]
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.getcwd(), os.pardir, 'src')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.getcwd(), os.pardir, 'examples')))
 
 # conf.py options for Latex
 latex_engine = 'pdflatex'
