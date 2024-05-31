@@ -40,7 +40,7 @@ some optional flag/arguments can be appended to support additional features:
     With ``-r`` or ``--add_related_ints``, "``python run_FLUTE.py root 12345678 localhost flute ../examples/input/example.xlsx ../examples/output/example -r``", Also find additional interactions related that are in the same paper set
     Combine ``-g -p`` or any option, "``python run_FLUTE.py root 12345678 localhost flute ../examples/input/example.xlsx ../examples/output/example -g -p``", "Do both ``-g`` and ``-p``, or any provided"
 
-3.2 *Via notebook:* Run the provided notebook after ``cd examples/`` from FLUTE root directory. Detailed instructions can be found in markdown cells inside the notebook or at this page
+3.2 *Via notebook:* Run the provided notebook after ``cd examples/`` from FLUTE root directory. Detailed instructions can be found in markdown cells inside the notebook or at `this page <https://melody-flute.readthedocs.io/en/latest/notebook_link.html>`_
 
 .. code-block:: bash
 

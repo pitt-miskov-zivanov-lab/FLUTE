@@ -19,7 +19,7 @@ The FiLter for Understanding True Events (FLUTE) tool seeks to identify high-con
    :caption: Contents
 
    prerequisite
-   notebook_link
    usage
+   notebook_link
    functions
    legal
