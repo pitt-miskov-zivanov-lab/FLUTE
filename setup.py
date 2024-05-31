@@ -28,7 +28,8 @@ setup(
         'mysql-connector-python',
         'numpy',
         'pandas',
-        'matplotlib'
+        'matplotlib',
+        'altair'
     ],
     zip_safe=False  # install as directory
     )

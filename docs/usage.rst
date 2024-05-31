@@ -55,9 +55,9 @@ some optional flag/arguments can be appended to support additional features:
     Regulated Name Regulated ID Regulated Type Regulator Name Regulator ID Regulator Type Paper IDs
     ============== ============ ============== ============== ============ ============== =========
 
-    * a score tuple ``(es, ts, ds)``, three positive numbers, denoting thresholds of escore, tscore, dscore. Default value is set to be (0,0,0), update it in ``main()`` (run in terminal) or in Cell 14 and 18 (run with notebook).
-    * If using the feature of returning recent papers, integer ``x`` is needed to specify how many years to return interactions published in recent papers. Default is 5, update it in ``main()`` (run in terminal) or in Cell 27 (run with notebook).
-    * If using the feature of querying protein IDs and returning related interactions, string of protein IDs is needed, e.g., ``P00533,P03386``, supported after ``-q`` (run in terminal) or in Cell 22 (run with notebook).
+    * a score tuple ``(es, ts, ds)``, three positive numbers, denoting thresholds of escore, tscore, dscore. Default value is set to be (0,0,0), update it in ``main()`` (run in terminal) or in Cell 18 and 27 (run with notebook).
+    * If using the feature of returning recent papers, integer ``x`` is needed to specify how many years to return interactions published in recent papers. Default is 5, update it in ``main()`` (run in terminal) or in Cell 38 (run with notebook).
+    * If using the feature of querying protein IDs and returning related interactions, string of protein IDs is needed, e.g., ``P00533,P03386``, supported after ``-q`` (run in terminal) or in Cell 32 (run with notebook).
 
 4.2 Outputs (including optional ones) include:
 
